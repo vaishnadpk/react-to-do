@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { RiCloseCircleLine } from "react-icons/ri";
-import { TiEdit } from "react-icons/ti";
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import { RiEdit2Fill } from "react-icons/ri";
 import TodoForm from "./TodoForm";
+import "./Todo.css";
 
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   const [edit, setEdit] = useState({
@@ -29,11 +30,11 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
           {todo.text}
         </div>
         <div className="icons">
-          <RiCloseCircleLine
+          <RiDeleteBin6Fill
             onClick={() => removeTodo(todo.id)}
             className="delete-icon"
           />
-          <TiEdit
+          <RiEdit2Fill
             onClick={() => setEdit({ id: todo.id, value: todo.text })}
             className="edit-icon"
           />
