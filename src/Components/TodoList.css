@@ -8,3 +8,9 @@
   height: 500px;
   text-align: center;
 }
+.heading {
+  color: #32103e;
+  font-size: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 15px;
+}

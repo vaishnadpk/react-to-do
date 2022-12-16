@@ -4,6 +4,7 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 import { RiEdit2Fill } from "react-icons/ri";
 import TodoForm from "./TodoForm";
 import "./Todo.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   const [edit, setEdit] = useState({
@@ -26,18 +27,21 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         className={todo.isComplete ? "todo-row-complete" : "todo-row"}
         key={index}
       >
-        <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-          {todo.text}
-        </div>
-        <div className="icons">
-          <RiDeleteBin6Fill
-            onClick={() => removeTodo(todo.id)}
-            className="delete-icon"
-          />
-          <RiEdit2Fill
-            onClick={() => setEdit({ id: todo.id, value: todo.text })}
-            className="edit-icon"
-          />
+        <div className="row"> 
+          </div>
+          <div className="icons col">
+            <RiDeleteBin6Fill
+              onClick={() => removeTodo(todo.id)}
+              className="delete-icon"
+            />
+            <RiEdit2Fill
+              onClick={() => setEdit({ id: todo.id, value: todo.text })}
+              className="edit-icon"
+            />
+            <div className="containerCheck">
+              <input type="checkbox" className="checkBox" />
+            </div>
+          </div>
         </div>
       </div>
     );

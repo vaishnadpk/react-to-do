@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./TodoForm.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function TodoForm(props) {
   const [input, setInput] = useState("");
@@ -26,15 +28,21 @@ function TodoForm(props) {
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Add a to do"
-        value={input}
-        className="todo-input"
-        onChange={handleChange}
-        ref={inputRef}
-      />
-      <button>Add</button>
+      <div className="row">
+        <div className="col-9">
+          <input
+            type="text"
+            placeholder="Add a to do"
+            value={input}
+            className="todo-input form-control"
+            onChange={handleChange}
+            ref={inputRef}
+          />
+        </div>
+        <div className="col-3">
+          <button className="btn btn-primary">Add</button>
+        </div>
+      </div>
     </form>
   );
 }

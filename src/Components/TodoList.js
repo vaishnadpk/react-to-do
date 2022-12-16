@@ -42,7 +42,8 @@ function TodoList() {
   };
   return (
     <div className="todoList">
-      <h1>What's your plan for Today ?</h1>
+      <h1 className="heading">Keep Notes 📝</h1>
+      <hr />
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}
