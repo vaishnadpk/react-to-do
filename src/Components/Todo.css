@@ -7,6 +7,7 @@
   font-size: 25px;
 }
 .textPart {
+  height: 20px;
   position: relative;
   top: 18px;
 }
@@ -19,9 +20,14 @@
   transform: scale(2);
   margin: 20px;
 }
-#listStyle {
+.listStyle {
   background-color: #fddbc4;
   margin: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.listStyle :hover {
+  background-color: #afc6f6;
   border: none;
   border-radius: 5px;
 }

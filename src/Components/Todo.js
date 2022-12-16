@@ -23,30 +23,32 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   }
   return todos.map(function (todo, index) {
     return (
-      <div
-        className={todo.isComplete ? "todo-row-complete" : "todo-row"}
-        key={index}
-        id="listStyle"
-      >
-        <div className="row">
-          <div
-            className="col textPart"
-            key={todo.id}
-            onClick={() => completeTodo(todo.id)}
-          >
-            {todo.text}
-          </div>
-          <div className="icons col">
-            <RiDeleteBin6Fill
-              onClick={() => removeTodo(todo.id)}
-              className="delete-icon"
-            />
-            <RiEdit2Fill
-              onClick={() => setEdit({ id: todo.id, value: todo.text })}
-              className="edit-icon"
-            />
-            <div className="containerCheck">
-              <input type="checkbox" className="checkBox" />
+      <div className="listStyle">
+        <div
+          className={todo.isComplete ? "todo-row-complete" : "todo-row"}
+          key={index}
+          id="listStyle"
+        >
+          <div className="row">
+            <div
+              className="col textPart"
+              key={todo.id}
+              onClick={() => completeTodo(todo.id)}
+            >
+              {todo.text}
+            </div>
+            <div className="icons col">
+              <RiDeleteBin6Fill
+                onClick={() => removeTodo(todo.id)}
+                className="delete-icon"
+              />
+              <RiEdit2Fill
+                onClick={() => setEdit({ id: todo.id, value: todo.text })}
+                className="edit-icon"
+              />
+              <div className="containerCheck">
+                <input type="checkbox" className="checkBox" />
+              </div>
             </div>
           </div>
         </div>
