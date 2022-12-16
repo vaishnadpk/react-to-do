@@ -32,7 +32,7 @@ function TodoForm(props) {
         <div className="col-9">
           <input
             type="text"
-            placeholder="Add a to do"
+            placeholder="New Task"
             value={input}
             className="todo-input form-control"
             onChange={handleChange}
