@@ -5,7 +5,8 @@
   border: 1px solid gray;
   border-radius: 10px;
   max-width: 600px;
-  height: 500px;
+  height: 80%;
+  min-height: 500px;
   text-align: center;
 }
 .heading {
