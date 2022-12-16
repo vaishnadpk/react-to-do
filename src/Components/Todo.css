@@ -31,3 +31,8 @@
   border: none;
   border-radius: 5px;
 }
+
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}

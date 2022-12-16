@@ -10,6 +10,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   const [edit, setEdit] = useState({
     id: null,
     value: "",
+    isChecked: false,
   });
   const submitUpdate = (value) => {
     updateTodo(edit.id, value);
@@ -18,12 +19,20 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
       value: "",
     });
   };
+
+  function handleInCheck(todo) {
+    completeTodo(todo.id);
+  }
+
+  function getCompletedStyle(todo) {
+    return todo.isComplete ? "col textPart completed" : "col textPart";
+  }
   if (edit.id) {
     return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
   return todos.map(function (todo, index) {
     return (
-      <div className="listStyle">
+      <div key={index} className="listStyle">
         <div
           className={todo.isComplete ? "todo-row-complete" : "todo-row"}
           key={index}
@@ -31,9 +40,9 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         >
           <div className="row">
             <div
-              className="col textPart"
+              className={getCompletedStyle(todo)}
               key={todo.id}
-              onClick={() => completeTodo(todo.id)}
+              style={{ textDecoration: todo.isComplete ? "line-through" : "" }}
             >
               {todo.text}
             </div>
@@ -47,7 +56,11 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
                 className="edit-icon"
               />
               <div className="containerCheck">
-                <input type="checkbox" className="checkBox" />
+                <input
+                  type="checkbox"
+                  className="checkBox"
+                  onClick={(e) => handleInCheck(todo)}
+                />
               </div>
             </div>
           </div>
