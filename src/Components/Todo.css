@@ -8,7 +8,7 @@
 }
 .textPart {
   position: relative;
-  top: 11px;
+  top: 18px;
 }
 .containerCheck {
   display: inline-block;
@@ -16,7 +16,12 @@
 .checkBox {
   color: rgb(18, 125, 36);
   cursor: pointer;
-  margin: 10px;
   transform: scale(2);
-  margin: 15px;
+  margin: 20px;
+}
+#listStyle {
+  background-color: #fddbc4;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
 }

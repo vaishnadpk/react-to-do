@@ -26,8 +26,15 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
       <div
         className={todo.isComplete ? "todo-row-complete" : "todo-row"}
         key={index}
+        id="listStyle"
       >
-        <div className="row"> 
+        <div className="row">
+          <div
+            className="col textPart"
+            key={todo.id}
+            onClick={() => completeTodo(todo.id)}
+          >
+            {todo.text}
           </div>
           <div className="icons col">
             <RiDeleteBin6Fill
